@@ -1,3 +1,8 @@
+_**!!! This is not the official Trinity wallet. !!!**_  
+The offical wallet can be found here: https://github.com/iotaledger/trinity-wallet  
+This fork allows seeds to be pasted from the clipboard.  
+Read this before use: [PASTA.md](PASTA.md)  
+
 # IOTA Trinity Wallet
 
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=iotaledger/trinity-wallet)](https://dependabot.com)
