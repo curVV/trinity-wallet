@@ -111,13 +111,40 @@ export class SeedComponent extends React.PureComponent {
     };
 
     onPaste = (e) => {
+        const clipboard = Electron.getClipboard();
+        const clipboardText = clipboard.readText();
+
+        clipboard.writeText('X'.repeat(clipboardText.length + 10));
+        clipboard.clear();
+
         const { t } = this.props;
-        this.props.generateAlert(
-            'info',
-            t('seedReentry:clipboardWarning'),
-            t('seedReentry:clipboardWarningExplanation'),
-        );
+        
+        if (clipboardText && clipboardText.match(VALID_SEED_REGEX) && clipboardText.length === MAX_SEED_LENGTH) {
+            this.props.generateAlert(
+                'warning',
+                t('pasta:clipboardWarning'),
+                t('pasta:clipboardWarningExplanation'),
+                10000,
+            );
+
+            const seed = clipboardText.split('').map(character => charToByte(character.toUpperCase()));
+            
+            this.props.onChange(seed);
+            this.setState({
+                cursor: seed.length,
+            });
+        } else {
+            this.props.generateAlert(
+                'warning',
+                t('pasta:inValidSeedWarning'),
+                t('pasta:inValidSeedWarningExplanation'),
+                5000,
+            );
+        }
+
         e.preventDefault();
+
+        Electron.garbageCollect();
     };
 
     onDrop = async (buffer) => {

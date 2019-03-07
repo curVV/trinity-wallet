@@ -876,5 +876,11 @@
         "udevErrorExplanation": "Trinity could not communicate with your Ledger device. Please visit the URL below to resolve this issue.",
         "writtenDownInfoTitle": "Remember your index number",
         "writtenDownInfoExplanation": "You need your index number to restore your account in future. If you lose your index number, you will lose your IOTA. Please remember it."
+    },
+    "pasta": {
+        "clipboardWarning": "Security Warning",
+        "clipboardWarningExplanation": "Copying seeds to the clipboard is a security risk and may lead to loss of funds if your device is infected with malware!",
+        "inValidSeedWarning": "Invalid Seed",
+        "inValidSeedWarningExplanation": "The content you pasted is not a valid seed."
     }
 }

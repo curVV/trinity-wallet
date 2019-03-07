@@ -75,6 +75,15 @@
             }
         }
 
+        &.warning {
+            background: var(--negative);
+            color: var(--negative-body);
+            border-color: var(--negative-hover);
+            span:hover {
+                color: var(--negative-hover);
+            }
+        }
+
         &.success {
             background: var(--positive);
             color: var(--positive-body);

@@ -81,6 +81,11 @@ const Electron = {
     },
 
     /**
+    * COPYPASTA: return clipbaord object
+    */
+    getClipboard: () => clipboard,
+    
+    /**
      * Do Proof of Work
      * @param {boolean} batchedPow - Should return batched PoW function
      * @returns {function} Proof of Work
